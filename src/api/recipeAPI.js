@@ -8,8 +8,6 @@ export async function getRecipeList(limit, offset) {
           offset: offset
         }
       });
-      console.log("js methode")
-      console.log(response.data);
       return response.data;
     } catch (error) {
       console.error("Get recipe list error: " + error);
