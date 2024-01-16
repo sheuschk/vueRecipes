@@ -13,27 +13,43 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="row">
+  <div class="page-header">
     <h1>Rezeptilis</h1>
+    <div class="spacer"></div>
     <button class="btn btn-outline-primary">Neues Rezept</button>
   </div>
 
   <div class="card" v-for="recipe in recipeList">
     <div class="card-body">
-      <h4 class="card-title">{{ recipe.name }}</h4>
-      <p class="card-text">Kategorie: {{ recipe.category }}</p>
+      <h4 class="card-title">
+        {{ recipe.name }}<span class="badge rounded-pill text-bg-primary">{{ recipe.category }}</span>
+      </h4>
+
       <div class="card-text">
         <p>Zutaten</p>
         <ul>
           <li v-for="ingredient in recipe.ingredients">{{ ingredient.name }} {{ ingredient.quantity }}</li>
         </ul>
       </div>
-      <button class="btn btn-outline-primary">Details</button>
+      <div class="add-button">
+        <router-link :to="{ name: 'recipe-details', params: { id: recipe.id } }">
+          <button type="button" class="btn btn-primary">Details</button>
+        </router-link>
+      </div>
     </div>
   </div>
 </template>
 <style lang="css" scoped>
-.row {
+.add-button {
   display: flex;
+  justify-content: flex-end;
+}
+
+.badge {
+  margin-left: 12px;
+}
+
+p {
+  margin: 0;
 }
 </style>
