@@ -16,7 +16,7 @@ onMounted(async () => {
   <div class="page-header">
     <h1>Rezeptilis</h1>
     <div class="spacer"></div>
-    <button class="btn btn-outline-primary">Neues Rezept</button>
+      <button class="btn btn-outline-primary">Neues Rezept</button>
   </div>
 
   <div class="card" v-for="recipe in recipeList">

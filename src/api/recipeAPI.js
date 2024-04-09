@@ -14,28 +14,18 @@ export const getRecipeList = async (limit, offset)  => {
     }  
 }
 
-export const getRecipe = async (limit, offset, id)  => {
+export const getRecipe = async (id)  => {
   try {
-    const response = await axios.get(`/${id}`, { 
-      params: {
-        limit: limit,
-        offset: offset
-      }
-    });
+    const response = await axios.get(`/${id}`);
     return response.data;
   } catch (error) {
     console.error("Get recipe error: " + error);
   }  
 }
 
-export const deleteRecipe = async (limit, offset, id)  => {
+export const deleteRecipe = async (id)  => {
   try {
-    const response = await axios.post(`/${id}`, { 
-      params: {
-        limit: limit,
-        offset: offset
-      }
-    });
+    const response = await axios.post(`/${id}`);
     return response.data;
   } catch (error) {
     console.error("Get recipe error: " + error);
