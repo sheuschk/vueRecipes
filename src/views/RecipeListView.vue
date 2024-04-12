@@ -8,6 +8,7 @@ const recipeList = ref([])
 
 onMounted(async () => {
   recipeData.value = await getRecipeList(10, 0)
+  console.log(recipeData)
   recipeList.value = recipeData.value.recipes
 })
 </script>
@@ -16,10 +17,12 @@ onMounted(async () => {
   <div class="page-header">
     <h1>Rezeptilis</h1>
     <div class="spacer"></div>
-    <button class="btn btn-outline-primary">Neues Rezept</button>
+    <router-link :to="{ name: 'recipe-new' }">
+      <button type="button" class="btn btn-primary">Neues Rezept</button>
+    </router-link>
   </div>
 
-  <div class="card" v-for="recipe in recipeList">
+  <div class="card mb-2" v-for="recipe in recipeList">
     <div class="card-body">
       <h4 class="card-title">
         {{ recipe.name }}<span class="badge rounded-pill text-bg-primary">{{ recipe.category }}</span>

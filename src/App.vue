@@ -1,9 +1,17 @@
 <script setup>
 import { RouterView } from 'vue-router'
+import { useRoute } from 'vue-router'
+
+import ModalComponent from '@/components/ModalComponent.vue'
+import NotificationComponent from '@/components/NotificationComponent.vue'
+
+const route = useRoute()
 </script>
 
 <template>
-  <RouterView />
+  <ModalComponent />
+  <NotificationComponent />
+  <RouterView :key="route.fullPath" />
 </template>
 
 <style scoped>

@@ -11,11 +11,13 @@
   "dependencies": {
     "@popperjs/core": "^2.11.8",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "@vueform/multiselect": "^2.6.6",
     "axios": "^1.6.5",
     "bootstrap": "^5.3.2",
     "pinia": "^2.1.7",
     "prettier": "^3.2.2",
     "vue": "^3.3.11",
+    "vue-material-design-icons": "^5.3.0",
     "vue-router": "^4.2.5"
   },
   "devDependencies": {
